@@ -8,7 +8,10 @@
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
+
+
+
+<body> 
 
   <header class="navbar">
     <div class="logo">2NDHOOD</div>
@@ -20,31 +23,118 @@
     <div class="nav-icons">
       <a href="#" title="Dashboard"><i class="fas fa-chart-line"></i></a>
       <a href="#" title="Cart"><i class="fas fa-shopping-cart"></i></a>
-      <a href="#" class="btn-signin">Sign In</a>
+      <a href="/login.html" class="btn-signin">Sign In</a>
     </div>
     
     
 
   </header>
-  <div class="text">E&nbsp;X&nbsp;P&nbsp;E&nbsp;R&nbsp;I&nbsp;E&nbsp;N&nbsp;C&nbsp;E&nbsp;&nbsp; E&nbsp;X&nbsp;C&nbsp;E&nbsp;L&nbsp;L&nbsp;E&nbsp;N&nbsp;C&nbsp;E</div>
+    <div class="experience-text">EXPERIENCE EXCELLENCE</div>
 
-  <div class="slider">
-
-  
-  <div class="poster"></div>
-  <div class="poster1"></div>
-
+<div class="dual-slider">
+  <!-- Men Section -->
+  <div class="slider-box">
+    <img id="menSlider" class="slide-img" src="men1.jpg" alt="Men" style="object-position: center top;">
+    <div class="slider-caption">
+      <h2>MEN</h2>
+      <button>SHOP NOW</button>
+    </div>
   </div>
 
+  <!-- Women Section -->
+  <div class="slider-box">
+    <img id="womenSlider" class="slide-img" src="women1.jpg" alt="Women" style="object-position: top center;">
+    <div class="slider-caption">
+      <h2>WOMEN</h2>
+      <button>SHOP NOW</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
   <div class="category">SHOP BY CATEGORY</div>
+  <div class="card-container" >
   <div class="card" id="card1">Sweat-Shirts</div>
   <div class="card" id="card2">Shirts</div>
   <div class="card" id="card3">Shoes</div>
   <div class="card" id="card4">Girl-Tshirt</div>
   <div class="card" id="card5">Watches</div>
+  </div>
   
-  
+  <script>
+  const menImages = ["men1.jpg", "men3.jpg"];
+  const womenImages = ["women1.jpg", "women3.jpg"];
+
+  let menIndex = 0;
+  let womenIndex = 0;
+
+  const menSlider = document.getElementById("menSlider");
+  const womenSlider = document.getElementById("womenSlider");
+
+  function changeImages() {
+    menIndex = (menIndex + 1) % menImages.length;
+    womenIndex = (womenIndex + 1) % womenImages.length;
+
+    menSlider.style.opacity = 0;
+    womenSlider.style.opacity = 0;
+
+    setTimeout(() => {
+      menSlider.src = menImages[menIndex];
+      womenSlider.src = womenImages[womenIndex];
+      menSlider.style.opacity = 1;
+      womenSlider.style.opacity = 1;
+    }, 400);
+  }
+
+  setInterval(changeImages, 4000);
+</script>
+
 
 
 </body>
+
+<footer>
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col logo-col">
+      <h2 class="footer-logo">2NDHOOD</h2>
+      <p>Your go-to thrift destination for timeless fashion.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">Cart</a></li>
+        <li><a href="/login.html">Sign In</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <p>Email: support@2ndhood.com</p>
+      <p>Phone: +91 9021146946</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/2ndhoood/"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 2NDHOOD. All rights reserved.</p>
+  </div>
+</footer>
+
+</footer>
 </html>
